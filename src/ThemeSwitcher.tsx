@@ -9,7 +9,7 @@ const ThemeSwitcher = () => {
 
     return (
         <div
-            className="text-ra-secondary-text cursor-pointer mx-2"
+            className="text-ra-secondary-text cursor-pointer mx-2 text-primary"
             onClick={toggleTheme}
         >
             {isDark ? (

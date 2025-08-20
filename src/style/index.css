@@ -23,14 +23,16 @@
 }
 
 @layer base {
-	:root {
+	:root { /* light mode - beach */
 		--primary-bg: #faedcd;
 		--primary-accent: #457b9d;
+        --primary: #111113;
 	}
 
-    html.dark {
-		--primary-bg: #936f5d;
-		--primary-accent: #1d3557;
+    html.dark { /* dark mode - space */
+		--primary-bg: #000000;
+		--primary-accent: #ffffff;
+        --primary: #e5e5e5;
 	}
 }
 
@@ -41,6 +43,10 @@
 
 	.text-primary-accent {
 		color: var(--primary-accent);
+	}
+
+    .text-primary {
+		color: var(--primary);
 	}
 }
 
