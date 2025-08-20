@@ -7,8 +7,9 @@ A personal portfolio website showcasing my work as a web developer.
 ## Built with
 
 - React
-- Vite
+- TypeScript
 - Tailwind CSS v4
+- Vite
 
 ---
 
