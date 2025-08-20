@@ -20,4 +20,21 @@
 	--font-size-7xl: 4.5rem;
 	--font-size-8xl: 6rem;
 	--font-size-9xl: 8rem;
+
+	--primary-bg: #faedcd;
+	--primary-accent: #457b9d;
+}
+
+@layer utilities {
+	.bg-primary {
+		background-color: var(--primary-bg);
+	}
+
+	.text-primary-accent {
+		color: var(--primary-accent);
+	}
+}
+
+body {
+	background-color: var(--primary-bg);
 }
