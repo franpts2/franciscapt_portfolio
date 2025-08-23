@@ -5,11 +5,9 @@ import { router } from "./router/index.js";
 
 const App = () => {
 	return (
-		
-			<ThemeProvider>
-				<RouterProvider router={router} />
-			</ThemeProvider>
-		
+		<ThemeProvider>
+			<RouterProvider router={router} />
+		</ThemeProvider>
 	);
 };
 
