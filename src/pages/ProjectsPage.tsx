@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ProjectsPage = () => {
-  return (
-    <div>Projects Page</div>
-  )
-}
+	return <div className="text-primary">Projects Page</div>;
+};
 
-export default ProjectsPage
+export default ProjectsPage;

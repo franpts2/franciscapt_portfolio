@@ -27,12 +27,16 @@
 		--primary-bg: #faedcd;
 		--primary-accent: #457b9d;
         --primary: #111113;
+
+        --secondary-accent: #f4a261;
 	}
 
     html.dark { /* dark mode - space */
 		--primary-bg: #000000;
 		--primary-accent: #ffffff;
         --primary: #e5e5e5;
+
+        --secondary-accent: #7251b5;
 	}
 }
 
@@ -43,6 +47,10 @@
 
 	.text-primary-accent {
 		color: var(--primary-accent);
+	}
+
+    .text-secondary-accent {
+		color: var(--secondary-accent);
 	}
 
     .text-primary {

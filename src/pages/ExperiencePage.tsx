@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ExperiencePage = () => {
-  return (
-    <div>Experience Page</div>
-  )
-}
+	return <div className="text-primary">Experience Page</div>;
+};
 
-export default ExperiencePage
+export default ExperiencePage;

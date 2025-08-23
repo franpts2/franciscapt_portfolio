@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
-	const [active, setActive] = useState("Home");
+	const [active, setActive] = useState("home");
 
 	return (
 		<div className="flex flex-col text-center justify-center h-screen gap-4 ml-10">
 			<NavLink
 				to="/"
 				className={({ isActive }) => {
-					return `font-family-body text-lg ${isActive ? "text-amber-600" : ""}`;
+					return `font-family-body text-lg ${isActive ? "text-secondary-accent" : "text-primary"}`;
 				}}
 				onClick={() => setActive("home")}
 			>
-				<p>Home</p>
+				Home
 			</NavLink>
 			<NavLink
 				to="about"
 				className={({ isActive }) => {
-					return `font-family-body text-lg ${isActive ? "text-amber-600" : ""}`;
+					return `font-family-body text-lg ${isActive ? "text-secondary-accent" : "text-primary"}`;
 				}}
 				onClick={() => setActive("about")}
 			>
@@ -27,7 +27,7 @@ const Sidebar = () => {
 			<NavLink
 				to="experience"
 				className={({ isActive }) => {
-					return `font-family-body text-lg ${isActive ? "text-amber-600" : ""}`;
+					return `font-family-body text-lg ${isActive ? "text-secondary-accent" : "text-primary"}`;
 				}}
 				onClick={() => setActive("experience")}
 			>
@@ -36,7 +36,7 @@ const Sidebar = () => {
 			<NavLink
 				to="projects"
 				className={({ isActive }) => {
-					return `font-family-body text-lg ${isActive ? "text-amber-600" : ""}`;
+					return `font-family-body text-lg ${isActive ? "text-secondary-accent" : "text-primary"}`;
 				}}
 				onClick={() => setActive("projects")}
 			>
