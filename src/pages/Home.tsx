@@ -1,7 +1,7 @@
 import React from "react";
 import ThemeSwitcher from "../components/ThemeSwitcher.js";
 
-const Home = () => {
+const HomePage = () => {
 	return (
 		<>
 			<div className="absolute top-4 right-4">
@@ -20,4 +20,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default HomePage;
