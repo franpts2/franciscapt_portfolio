@@ -1,5 +1,6 @@
 import React from "react";
 import ThemeSwitcher from "../components/ThemeSwitcher.js";
+import { Outlet } from "react-router-dom";
 
 const HomePage = () => {
 	return (
@@ -16,6 +17,9 @@ const HomePage = () => {
 					Web developer!
 				</p>
 			</div>
+            
+			{/* Render child routes here */}
+			<Outlet />
 		</>
 	);
 };

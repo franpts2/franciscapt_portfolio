@@ -1,8 +1,16 @@
 import React from "react";
-import Home from "./pages/HomePage.js";
+import ThemeProvider from "./components/ThemeProvider.js";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router/index.js";
 
 const App = () => {
-	return <Home />;
+	return (
+		
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		
+	);
 };
 
 export default App;
