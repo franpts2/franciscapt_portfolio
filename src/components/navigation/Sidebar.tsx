@@ -1,12 +1,14 @@
+import { Icon } from "@iconify/react";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { icons } from "../../assets/icons.js";
 
 const navItems = [
-	{ name: "Home", to: "/" },
-	{ name: "About", to: "/about" },
-	{ name: "Experience", to: "/experience" },
-	{ name: "Projects", to: "/projects" },
+	{ name: "Home", to: "/", icon: icons.home.outline },
+	{ name: "About", to: "/about", icon: icons.about.outline },
+	{ name: "Experience", to: "/experience", icon: icons.experience.outline },
+	{ name: "Projects", to: "/projects", icon: icons.projects.outline },
 ];
 
 const Sidebar = () => {
@@ -14,7 +16,7 @@ const Sidebar = () => {
 	const sidebarRef = React.useRef<HTMLDivElement>(null);
 	const navigate = useNavigate();
 
-    // keyboard shortcuts (ctrl+arrowUp and ctrl+arrowDown to move between pages)
+	// keyboard shortcuts (ctrl+arrowUp and ctrl+arrowDown to move between pages)
 	React.useEffect(() => {
 		const handleKeyDown = (e: KeyboardEvent) => {
 			if (e.ctrlKey && e.key === "ArrowUp") {
@@ -45,14 +47,14 @@ const Sidebar = () => {
 	return (
 		<div
 			ref={sidebarRef}
-			className="fixed flex flex-col justify-center h-screen gap-4 ml-10"
+			className="fixed flex flex-col justify-center h-screen gap-2 px-15"
 		>
-			{navItems.map(({ name, to }, idx) => (
+			{navItems.map(({ name, to, icon }, idx) => (
 				<NavLink
 					key={name}
 					to={to}
 					className={({ isActive }) => {
-						return `font-family-body text-lg ${
+						return `flex items-center gap-2 font-family-body text-lg ${
 							isActive || activeIndex === idx
 								? "text-secondary-accent"
 								: "text-primary"
@@ -63,6 +65,7 @@ const Sidebar = () => {
 						navigate(to);
 					}}
 				>
+					<Icon icon={icon} height={20}/>
 					{name}
 				</NavLink>
 			))}
