@@ -13,6 +13,7 @@ const navItems = [
 
 const Sidebar = () => {
 	const [activeIndex, setActiveIndex] = useState(0);
+	const [expanded, setExpanded] = useState(true);
 	const sidebarRef = React.useRef<HTMLDivElement>(null);
 	const navigate = useNavigate();
 
@@ -47,8 +48,19 @@ const Sidebar = () => {
 	return (
 		<div
 			ref={sidebarRef}
-			className="fixed flex flex-col justify-center h-screen gap-2 px-15"
+			className={`fixed flex flex-col justify-center h-screen px-10 ${
+				expanded ? "gap-2 w-50" : "gap-4 w-26"
+			}`}
 		>
+			<div
+				className="mb-2 text-primary cursor-pointer self-start"
+				onClick={() => setExpanded((prev) => !prev)}
+			>
+				<Icon
+					icon={expanded ? icons.left.fill : icons.right.fill}
+					height={20}
+				/>
+			</div>
 			{navItems.map(({ name, to, icon }, idx) => (
 				<NavLink
 					key={name}
@@ -65,8 +77,8 @@ const Sidebar = () => {
 						navigate(to);
 					}}
 				>
-					<Icon icon={icon} height={20}/>
-					{name}
+					<Icon icon={icon} height={20} />
+					{expanded && name}
 				</NavLink>
 			))}
 		</div>
