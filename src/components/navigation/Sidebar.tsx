@@ -1,47 +1,31 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+const navItems = [
+  { name: "Home", to: "/"},
+  { name: "About", to: "/about"},
+  { name: "Experience", to: "/experience"},
+  { name: "Projects", to: "/projects"},
+];
+
 const Sidebar = () => {
 	const [active, setActive] = useState("home");
 
 	return (
 		<div className="flex flex-col text-center justify-center h-screen gap-4 ml-10">
-			<NavLink
-				to="/"
-				className={({ isActive }) => {
-					return `font-family-body text-lg ${isActive ? "text-secondary-accent" : "text-primary"}`;
-				}}
-				onClick={() => setActive("home")}
-			>
-				Home
-			</NavLink>
-			<NavLink
-				to="about"
-				className={({ isActive }) => {
-					return `font-family-body text-lg ${isActive ? "text-secondary-accent" : "text-primary"}`;
-				}}
-				onClick={() => setActive("about")}
-			>
-				About
-			</NavLink>
-			<NavLink
-				to="experience"
-				className={({ isActive }) => {
-					return `font-family-body text-lg ${isActive ? "text-secondary-accent" : "text-primary"}`;
-				}}
-				onClick={() => setActive("experience")}
-			>
-				Experience
-			</NavLink>
-			<NavLink
-				to="projects"
-				className={({ isActive }) => {
-					return `font-family-body text-lg ${isActive ? "text-secondary-accent" : "text-primary"}`;
-				}}
-				onClick={() => setActive("projects")}
-			>
-				Projects
-			</NavLink>
+			{navItems.map(({ name, to }) => (
+				<NavLink
+					key={name}
+					to={to}
+					className={({ isActive }) => {
+						return `font-family-body text-lg ${isActive ? "text-secondary-accent" : "text-primary"}`;
+					}}
+					onClick={() => setActive(name)}
+				>
+					{name}
+				</NavLink>
+			))}
+			
 		</div>
 	);
 };
