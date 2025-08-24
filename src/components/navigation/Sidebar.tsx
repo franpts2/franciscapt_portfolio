@@ -46,42 +46,46 @@ const Sidebar = () => {
 	}, []);
 
 	return (
-		<div
-			ref={sidebarRef}
-			className={`fixed flex flex-col justify-center h-screen px-10 ${
-				expanded ? "gap-2 w-50" : "gap-4 w-26"
-			}`}
-		>
+		<>
 			<div
-				className="mb-2 text-primary cursor-pointer self-start"
+				className="fixed top-4 left-4 z-50 text-primary cursor-pointer"
 				onClick={() => setExpanded((prev) => !prev)}
 			>
 				<Icon
 					icon={expanded ? icons.left.fill : icons.right.fill}
-					height={20}
+					height={24}
 				/>
 			</div>
-			{navItems.map(({ name, to, icon }, idx) => (
-				<NavLink
-					key={name}
-					to={to}
-					className={({ isActive }) => {
-						return `flex items-center gap-2 font-family-body text-lg ${
-							isActive || activeIndex === idx
-								? "text-secondary-accent"
-								: "text-primary"
-						}`;
-					}}
-					onClick={() => {
-						setActiveIndex(idx);
-						navigate(to);
-					}}
-				>
-					<Icon icon={icon} height={20} />
-					{expanded && name}
-				</NavLink>
-			))}
-		</div>
+
+			<div
+				ref={sidebarRef}
+				className={`fixed flex flex-col justify-center h-screen px-10 ${
+					expanded ? "gap-2 w-50" : "gap-4 w-26"
+				}`}
+				style={{ left: 0, top: 0 }}
+			>
+				{navItems.map(({ name, to, icon }, idx) => (
+					<NavLink
+						key={name}
+						to={to}
+						className={({ isActive }) => {
+							return `flex items-center gap-2 font-family-body text-lg ${
+								isActive || activeIndex === idx
+									? "text-secondary-accent"
+									: "text-primary"
+							}`;
+						}}
+						onClick={() => {
+							setActiveIndex(idx);
+							navigate(to);
+						}}
+					>
+						<Icon icon={icon} height={20} />
+						{expanded && name}
+					</NavLink>
+				))}
+			</div>
+		</>
 	);
 };
 
