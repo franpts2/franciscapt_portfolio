@@ -1,9 +1,18 @@
 [
 	{
 		"id": "niafeup",
+		"position": "Project Manager - TTS",
+		"company": "NIAEFEUP",
+		"monthYearFrom": "2026/05",
+		"location": "Porto, Portugal",
+		"description": "As the Coordinator for the Time Table Selector (TTS) web app, I lead the development and continuous improvement of a critical tool designed to streamline the academic scheduling process for university students."
+	},
+	{
+		"id": "niafeup",
 		"position": "Member",
 		"company": "NIAEFEUP",
 		"monthYearFrom": "2026/03",
+		"monthYearTo": "2026/05",
 		"location": "Porto, Portugal",
 		"description": "Contributing to open-source projects for the University of Porto: Uni mobile app (Flutter), NIAEFEUP website (SvelteKit/TailwindCSS), and TTS platform optimization."
 	},
